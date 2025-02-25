@@ -1,0 +1,12 @@
+Camera Name: Beamage-3.0
+Serial Number: 294862
+Firmware: 1.70
+Description: USB3.0 Beam Profiling Camera
+ADC level: 12 bits 
+Total Duration: 0:0:0:3 (DD:HH:MM:SS)
+Sampling Rate: 0:0:0:1 (DD:HH:MM:SS)
+_______________________________________________________________
+Date	 Elapsed time(sec)	 dSigma X(um)	 dSigma Y (um)	 Effective Diameter(um)	 Ellipticity(%)	 Orientation(degrees)	 Centroid X(um)	 Centroid y(um)	 Peak X(um)	 Peak Y(um)	 Peak Saturation level(%)	 Peak to Average Ratio X	 Peak to Average Ratio Y	 X Baseline Position	 Y Baseline Position	 Delta Centroid X	 Delta Centroid Y	 Delta Peak X	 Delta Peak Y	  
+ 11:15:00, Tuesday, June 11, 2024	0.906	180.3	101.4	-	56.2	12.5	-217.9	48.1	-220.0	44.0	74.1	-	-	301.0	-77.0	-518.9	125.1	-521.0	121.0
+11:15:01, Tuesday, June 11, 2024	1.953	174.3	112.4	-	64.5	12.0	-216.4	47.1	-231.0	38.5	75.6	-	-	301.0	-77.0	-517.4	124.1	-532.0	115.5
+11:15:02, Tuesday, June 11, 2024	3.016	168.0	112.0	-	66.7	10.9	-213.8	45.0	-225.5	44.0	75.1	-	-	301.0	-77.0	-514.8	122.0	-526.5	121.0
