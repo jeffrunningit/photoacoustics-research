@@ -1,4 +1,6 @@
 # Photoacoustics research
+<img src="assets/photoacoustics.png" alt="Illustration of a surface plasmon polariton" height="200"/>
+<img src="assets/surfaceplasmonpolariton.png" alt="Illustration of a surface plasmon polariton" height="200"/>
 
 ## Overview
 
@@ -68,11 +70,16 @@ Data processing scripts (Python files with `data_processing` in their name) are 
      python plot_script.py
      ```
 
-## Notes
-
 
 - Since the specific processing and parameters required, such as FFT and frequency filtering threshold, changes depending on the experiment, scripts were added throughout the duration of this research project and the experimental data are organized by date and measurement type. Verify that you are working in the correct directory for the data set of interest.
 - Some scripts are optimized for specific datasets and may require minor modifications for use with other data.
+### Relative reflection change at angles around resonance in time and frequency domain (FFT)
+
+<img src="assets/reflectionchange_angles.png" alt="Relative reflection change at angles around resonance in time and frequency domain (FFT)" width="500"/>
+
+### Spectrogram of reflection changes in frequency domain (FFT)
+
+<img src="assets/FFT4GHzHPfilter.png" alt="Spectrogram FFT 4GHz HP" width="500"/>
 
 ## Acknowledgements
 
