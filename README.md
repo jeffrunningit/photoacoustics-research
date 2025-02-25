@@ -25,7 +25,7 @@ The repository includes Python scripts for processing and analyzing data. These 
   - **grating spectrum/**:  
     Contains spectroscopic data and scripts such as *`spectrometer plot.py`* and *`spectrum_plot_script.py`* for plotting reflection spectra.  
   - **grating whitelight measurement/**:  
-    - *`dataprocessing_jeffrey.py`*: Processes whitelight raw measurement data.  
+    - *`data_processing_wlreflection.py`*: Processes whitelight raw measurement data.  
     - *`whitelight pumpprobe 2dplot.py`*: Generates 2D pump–probe plots from the data.  
   - **Additional scripts**:  
     - *`peak fluence.py`*: Calculates or processes the laser peak fluence.  
