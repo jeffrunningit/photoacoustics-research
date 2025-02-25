@@ -56,8 +56,8 @@ Data processing scripts (Python files with `data_processing` in their name) are 
 
 1. **Clone the repository**:
     ```sh
-    git clone https://github.com/jeffrunningit/SIR-model-pendemic-prediction-cpp.git
-    cd SIR-pandemic-simulation-cpp
+    git clone https://github.com/jeffrunningit/photoacoustics-research.git
+    cd photoacoustics-research
     ```
 2. **Run the processing scripts**:  
   The `run_scripts.py` file is a convenient launcher that presents a menu of selected Python modules from the project. It allows you to easily run these scripts from the root directory.
