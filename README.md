@@ -1,10 +1,10 @@
-# Photoacoustics research
+# ARCNL Photoacoustics Research Data Analysis
 <img src="assets/photoacoustics.png" alt="Illustration of a surface plasmon polariton" height="200"/>
 <img src="assets/surfaceplasmonpolariton.png" alt="Illustration of a surface plasmon polariton" height="200"/>
 
 ## Overview
 
-This project investigates laser-induced photoacoustics in a 130 nm aluminium grating, with a focus on how surface plasmon polaritons (SPPs) influence the detection of acoustic waves. By combining laser experiments with computational analysis and visualization, the study aims to better understand the propagation of laser-induced strain waves in thin metal gratings. This research has potential interest in nanolithography used in cutting-edge semiconductor manufacturing technology.
+This is the data analysis part of a research internship project at ARCNL - Advanced Research Center for Nanolithography. This project investigates laser-induced photoacoustics in a 130 nm aluminium grating, with a focus on how surface plasmon polaritons (SPPs) influence the detection of acoustic waves. By combining laser experiments with computational analysis and visualization, the study aims to better understand the propagation of laser-induced strain waves in thin metal gratings. This research has potential interest in nanolithography used in cutting-edge semiconductor manufacturing technology.
 
 The repository includes Python scripts for processing and analyzing data. These scripts cover tasks such as data manipulation and cleaning, time-frequency domain analysis using the Fast Fourier Transform (FFT), interpolation, and frequency filtering. Visualizations generated with Matplotlib yield a range of figures that support scientific communication in contexts like the corresponding master’s thesis and presentations.
 
