@@ -12,6 +12,9 @@ em = (n**2 - k**2)
 theta = np.nan
 sameDirection = True
 
+print("Surface plasmon resonance angle calculation:")
+print(f"The resonance angle is: {theta:.2f} rad, {theta/(2*np.pi)*360:.2f} deg.")
+
 if em < -1:
     sin1 = np.sqrt(em * ed / (em + ed)) + wl * N / pitch
     sin2 = np.sqrt(em * ed / (em + ed)) - wl * N / pitch
@@ -24,5 +27,4 @@ if em < -1:
         sameDirection = False
         print('Direction is the opposite.')
         #print(sin2)
-    
-print(f"The resonance angle is: {theta:.2f} rad, {theta/(2*np.pi)*360:.2f} deg.")
+        

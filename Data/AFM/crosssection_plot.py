@@ -1,12 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib
-# from tqdm import tqdm
-# from scipy.ndimage import uniform_filter1d
-# from scipy.interpolate import interp1d
-# from scipy.optimize import curve_fit
-# from scipy import signal
-matplotlib.use('Qt5Agg')
+
+#matplotlib.use('Qt5Agg')
 plt.ion()
 
 height = np.loadtxt("/Users/jeffreysuen/Photoacoustics Research/Data/AFM/grating.0_00003_height.txt")
@@ -22,7 +18,6 @@ plt.plot(x, height_av, color='k')
 plt.xlabel(r'x [$\mu m$]')
 plt.ylabel(r'z [nm]')
 plt.xlim(right=5200)
-#plt.legend(['scan 1','scan 2','scan 3'])
 plt.tight_layout()
 plt.show()
 

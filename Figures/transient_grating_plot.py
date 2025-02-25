@@ -39,4 +39,5 @@ plt.legend(['scan 1','scan 2','scan 3'])
 plt.tight_layout()
 plt.show()
 
-print('.')
+input('Enter to exit...')
+plt.close()

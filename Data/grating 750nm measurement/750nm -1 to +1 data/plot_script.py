@@ -6,8 +6,9 @@ from scipy.ndimage import uniform_filter1d
 from scipy.optimize import curve_fit
 from scipy import signal
 
+#matplotlib.use("MacOSX")
 
-os.chdir("plotting")
+os.chdir("7 angles data")
 allfilenames = os.listdir()
 
 peak_index = 40 # Starting peak position (2ps) where mean is calculated from
@@ -21,7 +22,7 @@ Run_indices =  [20, #p1
                 19] #m1
 # in order of angles
 plotname = 'delta_various_angles_smooth'
-plotlist = [6]
+plotlist = [1,2,3,4,5,6,7]
 Savefig = 0
 
 Run_indices = [str(n).zfill(5) for n in Run_indices]
@@ -82,7 +83,6 @@ for filename, data in zip(plotfilenames, plotdata):
     freqs_list.append(delta_freqs)
 
 
-matplotlib.use("MacOSX")
 
 figsize = (14,7)
 
@@ -109,7 +109,7 @@ if 2 in plotlist:
     plt.ylabel(r'$\Delta R/R_0$ (%)')
     plt.title('Signal from multiple runs (background mean removed)')
     plt.legend()
-    plt.show()
+    plt.show(block=False)
 
 # 3. Offset
 if 3 in plotlist:
@@ -222,5 +222,4 @@ if Savefig == 1:
 
 
 
-
-print('end')
+input('Enter to exit...')

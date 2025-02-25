@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib
 import scipy.interpolate as interp
 
-matplotlib.use('Qt5Agg')
+#matplotlib.use('Qt5Agg')
 plt.ion()
 
 abspath = os.path.abspath(__file__)
@@ -75,4 +75,4 @@ plt.plot(wl, em)
 plt.show()
 
 
-print('.')
+input("Press Enter to continue...")

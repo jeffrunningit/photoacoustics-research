@@ -3,21 +3,19 @@ import os
 import subprocess
 import sys
 
-def find_py_files(root='.'):
-    """Recursively find all Python (.py) files in the directory tree."""
-    py_files = []
-    for dirpath, _, filenames in os.walk(root):
-        for filename in filenames:
-            if filename.endswith('.py'):
-                # Skip this file (the launcher) so it doesn't list itself.
-                if os.path.abspath(os.path.join(dirpath, filename)) == os.path.abspath(__file__):
-                    continue
-                file_path = os.path.join(dirpath, filename)
-                py_files.append(file_path)
-    return py_files
+py_files = ["./Figures/transient_grating_plot.py",
+            "./Data/peak fluence.py",
+            "./Data/grating spectrum/spectrometer plot.py",
+            "./Data/grating spectrum/18012024/white light spectroscopy plots.py",
+            "./Data/grating 750nm measurement/grating 750nm probe measurement plots.py",
+            "./Data/grating 750nm measurement/750nm -1 to +1 data/plot_script.py",
+            "./Data/grating 750nm measurement/750nm -3 to +3 data/plot_script.py",
+            "./Data/AFM/crosssection_plot.py",
+            "./Data/grating whitelight measurement/Measurements/whitelight pumpprobe 2dplot.py",
+            "./Data/Resonance angle calculation data/Al resonance angle calculation.py"]
 
 def display_menu(py_files):
-    print("\nPython files found:")
+    print("\nPython files available:")
     for i, file in enumerate(py_files, start=1):
         print(f"{i}. {file}")
     print("0. Exit")
@@ -34,11 +32,6 @@ def get_user_choice(max_choice):
             print("Invalid input. Please enter a number.")
 
 def main():
-    py_files = find_py_files()
-    if not py_files:
-        print("No Python files found in the directory.")
-        return
-
     while True:
         display_menu(py_files)
         choice = get_user_choice(len(py_files))
@@ -50,7 +43,7 @@ def main():
         print(f"\nRunning: {file_to_run}\n")
         try:
             # Run the selected Python file in a subprocess.
-            subprocess.run([sys.executable, file_to_run], check=True)
+            subprocess.run([sys.executable, os.path.basename(file_to_run)], check=True, cwd=os.path.dirname(file_to_run))
         except subprocess.CalledProcessError as e:
             print(f"An error occurred while running {file_to_run}: {e}")
         except KeyboardInterrupt:

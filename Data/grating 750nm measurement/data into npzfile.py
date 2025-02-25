@@ -1,15 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.cm as cm
-import matplotlib
 import glob
-#from tqdm import tqdm
-from scipy.ndimage import uniform_filter1d
-#from scipy.interpolate import interp1d
-#from scipy.optimize import curve_fit
-from scipy import signal
-matplotlib.use('Qt5Agg')
-plt.ion()
+
 '''
 from inspect import getsourcefile
 from os.path import abspath

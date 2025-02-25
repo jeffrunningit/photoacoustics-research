@@ -92,8 +92,6 @@ delta_fft_filtered = np.abs(np.fft.rfft(filtered_delta, axis=1, n=outputlen))
 delta_fft_unfiltered = np.abs(np.fft.rfft(filtered_delta, axis=1, n=outputlen))
 delta_freq = np.fft.rfftfreq(outputlen, d=dt) * 1e-9  # in Ghz, shifted starting with 0
 
-
-
 # smooth
 smoothsize = 3
 smooth_data = uniform_filter1d(data, size=smoothsize)

@@ -5,7 +5,6 @@ from tqdm import tqdm
 from scipy.ndimage import uniform_filter1d
 from scipy.optimize import curve_fit
 from scipy import signal
-
 import os
 
 abspath = os.path.abspath(__file__)
@@ -25,51 +24,54 @@ delta_sd_list = []
 run_list = [10, 7, 6, 4, 5, 8, 9]
 angle_label = ['+3','+2','+1','0','-1','-2','-3']
 
-## Read data, calculate delta and write into file
-# N_samples = 2000
-# iter_angle = iter(angle_label)
-# for run in run_list:
-#     raw_data = np.genfromtxt(f'Run000{run:02}.txt')
-#     signal_data = raw_data[0,:]
-#     reference_data = raw_data[1,:]
-    
-#     signal_pumped = np.reshape(signal_data[::2], (-1, N_samples//2))
-#     signal_blocked = np.reshape(signal_data[1::2], (-1, N_samples//2))
-#     reference_pumped = np.reshape(reference_data[::2], (-1, N_samples//2))
-#     reference_blocked = np.reshape(reference_data[1::2], (-1, N_samples//2))
-#     signal_pumped_averaged = np.mean(signal_pumped, axis=1)
-#     signal_blocked_averaged = np.mean(signal_blocked, axis=1)
-#     reference_pumped_averaged = np.mean(reference_pumped, axis=1)
-#     reference_blocked_averaged = np.mean(reference_blocked, axis=1)
+# Read data, calculate delta and write into file
+def readWriteDelta():
+    N_samples = 2000
+    iter_angle = iter(angle_label)
+    for run in run_list:
+        raw_data = np.genfromtxt(f'Run000{run:02}.txt')
+        signal_data = raw_data[0,:]
+        reference_data = raw_data[1,:]
+        
+        signal_pumped = np.reshape(signal_data[::2], (-1, N_samples//2))
+        signal_blocked = np.reshape(signal_data[1::2], (-1, N_samples//2))
+        reference_pumped = np.reshape(reference_data[::2], (-1, N_samples//2))
+        reference_blocked = np.reshape(reference_data[1::2], (-1, N_samples//2))
+        signal_pumped_averaged = np.mean(signal_pumped, axis=1)
+        signal_blocked_averaged = np.mean(signal_blocked, axis=1)
+        reference_pumped_averaged = np.mean(reference_pumped, axis=1)
+        reference_blocked_averaged = np.mean(reference_blocked, axis=1)
 
-#     # absolute difference
-#     if Abs == 1: 
-#         delta = signal_data[::2] - signal_data[1::2] * (reference_data[::2]/reference_data[1::2])
-#         difflabel = 'Absolute [V]'
-#     # relative difference
-#     elif Abs == 0: 
-#         delta = signal_data[::2]/signal_data[1::2] * reference_data[1::2]/reference_data[::2] - 1
-#         difflabel = 'Relative'
+        # absolute difference
+        if Abs == 1: 
+            delta = signal_data[::2] - signal_data[1::2] * (reference_data[::2]/reference_data[1::2])
+            difflabel = 'Absolute [V]'
+        # relative difference
+        elif Abs == 0: 
+            delta = signal_data[::2]/signal_data[1::2] * reference_data[1::2]/reference_data[::2] - 1
+            difflabel = 'Relative'
 
-#     delta = np.reshape(delta, (-1, N_samples//2))
-#     delta_averaged = np.mean(delta, axis=1)
-#     delta_sd = np.std(delta, axis=1)
-#     delta_list.append(delta_averaged)
-#     delta_sd_list.append(delta_sd)
+        delta = np.reshape(delta, (-1, N_samples//2))
+        delta_averaged = np.mean(delta, axis=1)
+        delta_sd = np.std(delta, axis=1)
+        delta_list.append(delta_averaged)
+        delta_sd_list.append(delta_sd)
 
-#     plt.figure()
-#     plt.plot(signal_pumped_averaged)
-#     plt.plot(signal_blocked_averaged)
-#     plt.plot(reference_pumped_averaged)
-#     plt.plot(reference_blocked_averaged)
-#     plt.ylim(6.45,6.65)
-#     plt.legend(['signal pumped', 'signal blocked', 'reference pumped', 'reference blocked'])
-#     plt.ylabel('V')
-#     plt.title(f'Raw data at {next(iter_angle)}')
-#     plt.show()
-#     print(f'Read {run} done')
-# np.savetxt('delta_various_angles.txt', np.vstack(delta_list))
-# np.savetxt('delta_sd_various_angles.txt', np.vstack(delta_sd_list))
+        plt.figure()
+        plt.plot(signal_pumped_averaged)
+        plt.plot(signal_blocked_averaged)
+        plt.plot(reference_pumped_averaged)
+        plt.plot(reference_blocked_averaged)
+        plt.ylim(6.45,6.65)
+        plt.legend(['signal pumped', 'signal blocked', 'reference pumped', 'reference blocked'])
+        plt.ylabel('V')
+        plt.title(f'Raw data at {next(iter_angle)}')
+        plt.show()
+        print(f'Read {run} done')
+    np.savetxt('delta_various_angles.txt', np.vstack(delta_list))
+    np.savetxt('delta_sd_various_angles.txt', np.vstack(delta_sd_list))
+
+# readWriteDelta()
 
 delays = delays_uncut[peak_index:]
 delta_arr_uncut = np.genfromtxt('delta_various_angles.txt')
