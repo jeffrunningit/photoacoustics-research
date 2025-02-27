@@ -49,7 +49,7 @@ The repository includes Python scripts for processing and analyzing data. These 
   - SciPy  
   - Matplotlib  
 > [!NOTE]  
-Data processing scripts (Python files with `data_processing` in their name) are designed to parse raw data files from laboratory equipment using the proprietary `oberon_package`—which is required to read `result.dat` files. Consequently, these scripts cannot be executed outside the ARCNL environment. However, once the raw data is parsed, it is mostly rewritten into `.txt` files for subsequent processing with the other scripts included.
+Data processing scripts (Python files with `data_processing` in their name) are designed to parse raw data files from laboratory equipment using the proprietary `oberon_package`—which is required to read the `result.dat` files. Consequently, these scripts cannot be executed outside the ARCNL environment. However, once the raw data is parsed, it is mostly rewritten into `.txt` files for subsequent processing with the other scripts included.
   
 
 ## Usage
@@ -73,6 +73,8 @@ Data processing scripts (Python files with `data_processing` in their name) are 
 
 - Since the specific processing and parameters required, such as FFT and frequency filtering threshold, changes depending on the experiment, scripts were added throughout the duration of this research project and the experimental data are organized by date and measurement type. Verify that you are working in the correct directory for the data set of interest.
 - Some scripts are optimized for specific datasets and may require minor modifications for use with other data.
+
+## Example graphs
 ### Relative reflection change at angles around resonance in time and frequency domain (FFT)
 
 <img src="assets/reflectionchange_angles.png" alt="Relative reflection change at angles around resonance in time and frequency domain (FFT)" width="500"/>
